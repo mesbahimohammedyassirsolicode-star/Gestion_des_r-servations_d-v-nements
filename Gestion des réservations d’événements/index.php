@@ -17,7 +17,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <header>
         <nav class="nav-btn">
-            <a href="login.php">Login</a>
+            <a href="register.php">login</a>
             <a href="signup.php">Register</a>
              <a href="index.php">Home</a>
         </nav>
@@ -43,7 +43,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </p>
 
 
-             <a class="btn" href="booking.php?id=<?php echo $event['id']; ?>">book</a>
+             <a class="btn" href="booking.php?id=<?php echo $event['id'];?>">book</a>
 
         </div>
         <?php endforeach; ?>

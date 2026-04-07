@@ -20,7 +20,7 @@ if(isset($_POST['ok']))
                 echo "<p>email invalide</p>";
                 $erreur = true;
             }
-            if(strlen($password)>=8){
+            if(strlen($password)<=8){
 echo "passowrd are low than we expect";
                 $erreur = true;
 
@@ -36,21 +36,31 @@ if (!preg_match("/^[a-zA-Z0-9]+$/",$password)) {
     }
     if($erreur == false)
         {
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $sql = "INSERT INTO users (name, email, password)
                     VALUES (:name,:email,:password)";
 
             $stm = $pdo->prepare($sql);
 
-            $stm->execute([
-                "nom" => $name,
-                "email" => $email,
-                "password" => $password,
-                
-            ]);
-            echo "<p>utilisateur bien ajouter</p>";
+           try {
+    $stm->execute([
+        "name" => $name,
+        "email" => $email,
+        "password" => $password
+    ]);
 
-            header("Location: login.php");
-            exit;
+    echo "<p>user add successfully</p>";
+    header("Location: login.php");
+    exit;
+
+} catch(PDOException $e) {
+
+    if($e){
+        echo "<p>Email already used </p>";
+    } else {
+        echo "Erreur : " . $e->getMessage();
+    }
+}
         }
 }
 ?>
