@@ -17,9 +17,9 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <header>
         <nav class="nav-btn">
-            <a href="register.php">login</a>
+            <a href="login.php">login</a>
             <a href="signup.php">Register</a>
-             <a href="index.php">Home</a>
+            <a href="index.php">Home</a>
         </nav>
     </header>
     <main>
