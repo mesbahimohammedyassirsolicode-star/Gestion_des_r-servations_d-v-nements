@@ -70,18 +70,19 @@ if (!preg_match("/^[a-zA-Z0-9]+$/",$password)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
+    <link rel="stylesheet" href="singup.css">
 </head>
 <body>
     <form method="post">
         <label >Name:</label>
-        <input type="text" name="name" placeholder="enter your name">
-        <label>email</label>
-        <input type="text" name="email" placeholder="entery the email ">
-        <label>mote de passe</label>
-        <input type="password" name="password" placeholder="enter the password">
-        <label>confirme le mote pass</label>
-        <input type="password" name="password2"  placeholder="confirme your password">
-        <button type="submit" name="ok">creat an account</button>
+        <input type="text" name="name" placeholder="Enter your name">
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Entery the email ">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter the password">
+        <label>Confirme Password </label>
+        <input type="password" name="password2"  placeholder="Confirme your password">
+        <button type="submit" name="ok">Creat an account</button>
 
     </form>
 </body>
