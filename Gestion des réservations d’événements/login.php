@@ -37,11 +37,11 @@ if(isset($_POST['ok']))
 </head>
 <body>
     <form  method="POST">
-        <label>email</label>
-        <input type="text" name="email" placeholder="saisie  l'email">
-        <label>mote de passe</label>
-        <input type="password" name="password" placeholder="saisie  le mot de passe">
-         <button type="submit" name="ok">login</button>
+        <label>Email</label>
+        <input type="text" name="email" placeholder="Enter the Email">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Password">
+         <button type="submit" name="ok">Login</button>
     </form>
     <p> <?= $erreur ?></p>
 </body>
