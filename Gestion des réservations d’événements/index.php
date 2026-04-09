@@ -17,9 +17,14 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <header>
         <nav class="nav-btn">
-            <a href="login.php">login</a>
-            <a href="signup.php">Register</a>
-            <a href="index.php">Home</a>
+            <?php if (isset($_SESSION['id'])): ?>
+                <a href="index.php">Home</a>
+                <a href="my_reservations.php">My Reservations</a>
+            <?php else: ?>
+                <a href="login.php">login</a>
+                <a href="signup.php">Register</a>
+                <a href="index.php">Home</a>
+            <?php endif; ?>
         </nav>
     </header>
     <main>
